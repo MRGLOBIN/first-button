@@ -1,18 +1,27 @@
 {
-  "name": "first-button",
-  "version": "1.0.0",
+  "name": "@mrglobin/first-button",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.6",
   "description": "do not try its just for me know how to push packages to npm",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "author": "mrGoblin",
   "license": "MIT",
-  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MRGLOBIN/first-button"
+  },
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "publish:github": "npm publish --registry https://npm.pkg.github.com/mrglobin",
+    "publish:npm": "npm publish --registry https://registry.npmjs.org/",
+    "publish:all": "npm run publish:github && npm run publish:npm"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
